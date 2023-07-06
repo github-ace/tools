@@ -1,6 +1,7 @@
 {
   "private": true,
   "author": "github-ace <2433195678@qq.com>",
+  "homepage": "https://github-ace.github.io/tools",
   "scripts": {
     "dev": "umi dev",
     "build": "umi build",
