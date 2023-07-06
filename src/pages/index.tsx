@@ -11,7 +11,7 @@ export default function HomePage() {
   );
   console.log(list);
   return (
-    <Row>
+    <Row gutter={16}>
       {list.map((item) => (
         <Col xs={12} sm={10} md={8} lg={6} xl={4}>
           <Link to={item.path || ""}>

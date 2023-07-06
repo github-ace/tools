@@ -13,23 +13,23 @@ export default function Page() {
     const key =
       lodash.sortBy(
         lodash.sampleSize(
-          new Array(35)
+          new Array(33)
             .fill(undefined)
             .map((item, index) =>
               lodash.padStart((index + 1).toString(), 2, "0")
             ),
-          5
+          6
         )
       ) +
       " | " +
       lodash.sortBy(
         lodash.sampleSize(
-          new Array(12)
+          new Array(16)
             .fill(undefined)
             .map((item, index) =>
               lodash.padStart((index + 1).toString(), 2, "0")
             ),
-          2
+          1
         )
       );
     setKeys([...keys, { id: uuidv4(), key }]);
