@@ -7,4 +7,5 @@ export default defineConfig({
     { path: "/welfareLottery", component: "welfareLottery", title: "双色球" },
   ],
   npmClient: 'pnpm',
+  base: "/tools/"
 });
