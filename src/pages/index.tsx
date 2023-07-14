@@ -1,6 +1,7 @@
 import { Card, Row, Col } from "antd";
 import { Link, useAppData } from "umi";
 import lodash from "lodash";
+import { routesConfig } from "@/config/site";
 
 export default function HomePage() {
   const { routes } = useAppData();
@@ -9,13 +10,12 @@ export default function HomePage() {
       return ctx.path == "/";
     })
   );
-  console.log(list);
   return (
     <Row gutter={16}>
       {list.map((item) => (
-        <Col xs={12} sm={10} md={8} lg={6} xl={4}>
+        <Col xs={12} sm={10} md={8} lg={6} xl={4} key={item.id}>
           <Link to={item.path || ""}>
-            <Card hoverable>{item?.title}</Card>
+            <Card hoverable>{routesConfig[item.path || ""].title}</Card>
           </Link>
         </Col>
       ))}
