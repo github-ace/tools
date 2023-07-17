@@ -4,7 +4,8 @@ import { Button, List, Row, Col, InputNumber, Segmented } from "antd";
 import styles from "./index.less";
 import { v4 as uuidv4 } from "uuid";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { ClearOutlined } from "@ant-design/icons";
+import { ClearOutlined, CopyOutlined } from "@ant-design/icons";
+import { Icon } from "umi";
 
 type Keys = Array<{ id: string; key: string }>;
 enum Game {
@@ -110,10 +111,12 @@ export default function Page() {
         <List
           dataSource={keys}
           header={
-            <Row align="middle" justify="space-between">
+            <Row align="middle" justify="space-between" gutter={[0, 16]}>
               <Col>
                 <CopyToClipboard text={keys.map((item) => item.key).join("\n")}>
-                  <Button>复制 {keys.length} 组号码</Button>
+                  <Button icon={<CopyOutlined />}>
+                    复制 {keys.length} 组号码
+                  </Button>
                 </CopyToClipboard>
               </Col>
               <Col>
@@ -122,7 +125,12 @@ export default function Page() {
                 </Button>
               </Col>
               <Col>
-                <Button onClick={generateKeyWithNum}>生成</Button>
+                <Button
+                  icon={<Icon width="18px" height="18px" icon="fluent-emoji:four-leaf-clover" />}
+                  onClick={generateKeyWithNum}
+                >
+                  生成
+                </Button>
                 <InputNumber
                   style={{ width: 120 }}
                   addonAfter="组"
